@@ -1,0 +1,12 @@
+name: "Hygiene to tag issues"
+description: "This action will make use of labels to and tag the issues that are open but not assign to a board column"
+author: "sid-ah"
+branding:
+  icon: "book-closed"
+  color: "green"
+outputs:
+  id:
+    description: "id of issue labeled"
+runs:
+  using: "node12"
+  main: "index.js"
