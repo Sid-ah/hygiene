@@ -10,7 +10,11 @@ jobs:
     name: hygiene run
     steps:
       - uses: sid-ah/hygiene/actions@master
-      - name: Install Dependencies
-        run: npm install
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12"
+          check-latest: true
+      - run: npm install
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
