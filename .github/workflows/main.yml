@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     name: hygiene run
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-Beta
-        with:
-          node-version: "12"
-          check-latest: true
       - run: npm install
       - uses: sid-ah/hygiene/actions@master
         env:
