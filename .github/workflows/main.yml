@@ -2,14 +2,14 @@ name: Maintain the hygiene of a repo
 
 on:
   schedule:
-    - cron:  '*/1 * * * *'
+    - cron: "*/259 * * * *"
 
 jobs:
   alert:
     runs-on: ubuntu-latest
     name: hygiene run
-    steps:       
-    - uses: sid-ah/hygiene@master
-    - uses: ./actions
-      env:     
-        ado_token: '${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}'
+    steps:
+      - uses: sid-ah/hygiene@master
+      - uses: ./actions
+        env:
+          ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
