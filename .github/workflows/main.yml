@@ -2,19 +2,19 @@ name: Maintain the hygiene of a repo
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/1 * * * *"
 
 jobs:
   alert:
     runs-on: ubuntu-latest
     name: hygiene run
     steps:
-      - uses: sid-ah/hygiene/actions@master
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
           check-latest: true
       - run: npm install
+      - uses: sid-ah/hygiene/actions@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
