@@ -3,7 +3,8 @@ const github = require("@actions/github");
 
 // require("dotenv").config();
 const { env } = process;
-const { sourceRepo, sourceRepoOwner } = env;
+const owner = "Sid-ah";
+const repo = "hygiene";
 let auth = env.gh_token;
 
 console.log("auth ", auth);
@@ -12,8 +13,8 @@ const octokit = new Octokit({ auth });
 async function getIssues() {
   try {
     const options = octokit.issues.listForRepo.endpoint.merge({
-      owner: sourceRepoOwner,
-      repo: sourceRepo,
+      owner,
+      repo,
       state: "open",
     });
 
