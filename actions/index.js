@@ -4,7 +4,7 @@ const github = require("@actions/github");
 // require("dotenv").config();
 const { env } = process;
 const { sourceRepo, sourceRepoOwner } = env;
-let auth = env.ADO_PERSONAL_ACCESS_TOKEN;
+let auth = env.gh_token;
 
 console.log("auth ", auth);
 const octokit = new Octokit({ auth });
