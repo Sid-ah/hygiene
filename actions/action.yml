@@ -9,4 +9,5 @@ outputs:
     description: "id of issue labeled"
 runs:
   using: "node12"
+  run: npm ci
   main: "index.js"

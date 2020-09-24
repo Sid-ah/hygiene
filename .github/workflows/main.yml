@@ -12,6 +12,3 @@ jobs:
       - uses: sid-ah/hygiene/actions@master
         env:
           gh_token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: install dependencies
-        run: npm ci
-
