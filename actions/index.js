@@ -4,7 +4,7 @@ const moment = require("moment-timezone");
 const { throttling } = require("@octokit/plugin-throttling");
 const MyOctokit = Octokit.plugin(throttling);
 
-require("dotenv").config();
+// require("dotenv").config();
 const { env } = process;
 const owner = "Sid-ah";
 const repo = "hygiene";
