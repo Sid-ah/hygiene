@@ -3,14 +3,15 @@ name: Maintain the hygiene of a repo
 on:
   schedule:
     - cron: "*/5 * * * *"
-
 jobs:
-  alert:
+  ci:
     runs-on: ubuntu-latest
-    name: hygiene run
     steps:
-      - uses: sid-ah/hygiene@master
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with: {node-version: 13.x}
+      - uses: actions/cache@v1
+      - run: npm ci
         env:
           gh_token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: install dependencies
-        run: npm ci
+      
