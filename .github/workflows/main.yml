@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: hygiene run
     steps:
-      - uses: sid-ah/hygiene/actions@master
+       - uses: actions/checkout@v2
+       - run: npm ci
         env:
           gh_token: "${{ secrets.GITHUB_TOKEN }}"
