@@ -1,8 +1,7 @@
 name: Maintain the hygiene of a repo
 
-on:
-  schedule:
-    - cron: "*/5 * * * *"
+on: workflow_dispatch
+  
 jobs:
   ci:
     runs-on: ubuntu-latest
